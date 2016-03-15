@@ -1,0 +1,12 @@
+com\example\rest\DataBaseInsertion.class
+com\example\app\MyApplication.class
+com\example\rest\MatrixParamExample.class
+com\example\rest\FileUploadForm.class
+com\example\rest\NormalURIMatching.class
+com\example\rest\QueryParamExample.class
+com\example\rest\FormParamExample.class
+com\example\rest\TextFileDownload.class
+com\example\rest\HelloWorld.class
+com\example\rest\FileUploads.class
+com\example\rest\HeaderParamExample.class
+com\example\rest\PathParamExample.class

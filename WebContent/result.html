@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>REI UI </title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+<body class="container">
+
+<table id="demo" class="table table-striped">Let AJAX change this text</table>
+
+<button type="button" onclick="loadDoc()" class="btn btn-danger">Change Content</button>
+
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+        var objects = JSON.parse(xhttp.responseText);
+        var txt = "<thead><tr><th>ID</th><th>Department</th></tr></thead>";
+        for(x in objects) {
+        	txt += "<tr><td>"+(x)+"</td><td>"+objects[x]+"</td></tr>"
+        	
+            }
+        document.getElementById("demo").innerHTML = txt;
+    }
+  };
+  xhttp.open("GET", "http://localhost:8080/REIProject/rest/file/request", true);
+  xhttp.send();
+}
+</script>
+
+</body>
+</html>
